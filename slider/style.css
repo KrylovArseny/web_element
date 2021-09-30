@@ -1,0 +1,36 @@
+#slider_ars_cont {
+    border: 2px solid black;
+    width: 256px;
+    height: 256px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+img {
+    max-width: 256px;
+}
+
+#slider_ars {
+    width: 1024px;
+    height: 256px;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+}
+
+.ars_dot {
+    height: 50px;
+    width: 50px;
+    background: #333;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+#slider_ars_point {
+    display: flex;
+}
+
+.active {
+    background: red;
+}
