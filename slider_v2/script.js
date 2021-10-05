@@ -1,9 +1,9 @@
 class Slider {
-    constructor(selector) {
+    constructor(selector, elem, btn) {
         this.offset = 0
         this.width
-        this.elem = 1
-        this.img = document.querySelector(selector).children
+        this.elem = elem
+        this.img = [...document.querySelector(selector).children]
         this.parent = document.querySelector(selector).parentElement
         this.count = this.img.length - 1
         this.class_dot = 'ars_dot'
@@ -12,6 +12,7 @@ class Slider {
         this.slider_ars_point = document.querySelector('#slider_ars_point')
         this.next = document.querySelector('#slider_ars_next')
         this.prev = document.querySelector('#slider_ars_prev')
+        this.btn = btn
         this._init();
     }
 
@@ -23,7 +24,10 @@ class Slider {
         this.parent.style.width = this.width + 'px'
         this.sliderLine.style.left = 0 + 'px'
         this._dot_p(dots)
-        this._btn(dots)
+        if (this.btn){
+            this._btn(dots)
+        }
+
     }
 
     _dot() {
@@ -120,4 +124,4 @@ class Slider {
 
 
 
-let slider = new Slider('#slider_ars');
+new Slider('#slider_ars', 2, true);
